@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h2>{{ title }}</h2>
+    <table>
+        {% for row in data %}
+        <tr>
+            <td>
+                <h3>{{ row.heading }}</h3>
+                <audio controls>
+                    <source src="{{ row.mp3_url }}" type="audio/mp3" />
+                    <source src="{{ row.ogg_url }}" type="audio/ogg" />
+                </audio>
+            </td>
+            <td>
+                <img src="{{ row.spectrogram_url }}" alt="" />
+            </td>
+            <td>
+                <img src="{{ row.raw_spectrogram_url }}" alt="" />
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
